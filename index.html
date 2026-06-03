@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App fitness professionale per allenamenti a corpo libero">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>Calisthenics Tracker</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="logo">💪 Tracker</h1>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <main class="app-main">
+            <section id="dashboard" class="section active">
+                <div class="section-header"><h2>Dashboard</h2></div>
+                <div class="card"><h3>Allenamento di Oggi</h3><p class="placeholder">Nessun allenamento</p></div>
+                <div class="card"><h3>Streak</h3><p class="stat-large">0</p><p class="stat-label">giorni</p></div>
+            </section>
+            <section id="workout" class="section"><div class="section-header"><h2>Allenamento</h2></div><div class="placeholder">Schermata attiva</div></section>
+            <section id="exercises" class="section"><div class="section-header"><h2>Esercizi</h2></div><div class="placeholder">Libreria</div></section>
+            <section id="calendar" class="section"><div class="section-header"><h2>Calendario</h2></div><div class="placeholder">Calendario</div></section>
+            <section id="progress" class="section"><div class="section-header"><h2>Progressi</h2></div><div class="placeholder">Dati</div></section>
+            <section id="stats" class="section"><div class="section-header"><h2>Statistiche</h2></div><div class="placeholder">Grafici</div></section>
+            <section id="coach" class="section"><div class="section-header"><h2>AI Coach</h2></div><div class="placeholder">Analisi</div></section>
+            <section id="profile" class="section"><div class="section-header"><h2>Profilo</h2></div><div class="placeholder">Info</div></section>
+            <section id="settings" class="section"><div class="section-header"><h2>Impostazioni</h2></div><div class="placeholder">Config</div></section>
+        </main>
+        <nav class="app-nav">
+            <button class="nav-btn active" data-section="dashboard"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v8H3zm4-8h2v16H7zm4-2h2v18h-2zm4 4h2v14h-2zm4-2h2v16h-2z"></path></svg><span>Dashboard</span></button>
+            <button class="nav-btn" data-section="workout"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13 6.06V3h-2v3.06C6.54 6.355 2 10.804 2 16c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.196-4.54-9.645-9-9.94zM12 20c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg><span>Workout</span></button>
+            <button class="nav-btn" data-section="exercises"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 13.7L16 12.4V7c0-.55-.45-1-1-1h-2V3.3C13 2.58 12.42 2 11.7 2h-.4c-.71 0-1.3.58-1.3 1.3V6H6c-.55 0-1 .45-1 1v5.4l-1.7 1.3c-.38.3-.6.75-.6 1.2V19c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-2.7c0-.45-.22-.9-.6-1.2zM8 8h8v3.5l-4-3-4 3V8z"></path></svg><span>Esercizi</span></button>
+            <button class="nav-btn" data-section="calendar"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"></path></svg><span>Calendario</span></button>
+            <button class="nav-btn" data-section="progress"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18 9.41 12l4 4 6.3-6.29L22 12v-6z"></path></svg><span>Progressi</span></button>
+            <button class="nav-btn" data-section="stats"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"></path></svg><span>Stats</span></button>
+            <button class="nav-btn" data-section="coach"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg><span>Coach</span></button>
+            <button class="nav-btn" data-section="profile"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg><span>Profilo</span></button>
+            <button class="nav-btn" data-section="settings"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.62l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.09-.47 0-.59.22L2.74 8.87c-.12.21-.08.48.1.62l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.62l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.48-.12-.62l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg><span>Impostazioni</span></button>
+        </nav>
+    </div>
+    <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+    <script src="js/app.js"></script>
+</body>
+</html>
